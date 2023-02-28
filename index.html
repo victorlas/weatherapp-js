@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<style>
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  top: 100px;
+}
+
+input[type="text"] {
+  margin: 30px;
+    background: #0e5a9a8c;
+    border: none;
+    outline: none;
+    max-width: 190px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 9999px;
+    /* box-shadow: inset 2px 5px 10px rgb(5 5 5); */
+    color: white;
+}
+
+button{
+ position: relative;
+  padding: 6px 9px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #000000;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+button:hover {
+  background: rgb(118 192 223);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+
+#retangulo {
+  width: 500px;
+  height: 934px;
+  border-radius: 30px;
+ background-color: lightblue;
+  position: absolute;
+  top: 74px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background-image: url("weather/blueland.jpg") ;
+  background-repeat: no-repeat;
+  background-size: 500px 1000px;
+  color: #ffffff;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25),
+             -15px -15px 30px rgb(60, 60, 60)
+
+}
+#sun{
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+}
+#temperatura{
+    font-family: 'Franklin Gothic Medium';
+    font-size: 50pt;
+
+}
+#humity{
+  font-size: 15pt;
+  font-family: 'Franklin Gothic Medium'
+  
+}
+#descrição{
+  font-size: 20pt;
+  font-family: 'Franklin Gothic Medium';
+  top: 480px;
+ text-align: center;
+}
+#cidade{
+  font-size: 40pt;
+  font-family: 'Franklin Gothic Medium';
+  text-align: center; 
+}
+body{
+  background-color: grey;
+}
+#feels{
+  font-family: 'Franklin Gothic Medium';
+  font-size: 15pt;
+}
+</style>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+ 
+<div id="retangulo">
+  <head>
+    <input id="search" type="text" placeholder="City" autofocus>
+    <button onclick="myFunction()" id=" but" >Search</button >
+    <title>Exemplo de Vinculação de Dados em JavaScript</title>
+    <p id="cidade">  </p>
+    <img id="sun">
+    <p id="temperatura"> N/A </p>
+    <p id="descrição"> N/A  </p>
+    <p id="humity"> Humidity: N/A </p>
+    <p id="feels"> Feels like: N/A  </p> 
+</div>
+
+</head>
+  <body>
+   
+   
